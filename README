@@ -1,0 +1,57 @@
+324CB_AVRAM_Marius
+
+Modul in care au fost gandite clasele: 
+
+-NodArbore - Am creeat clasa pentru ca pe langa caracterele propriu-zise mai trebuie
+sa stim si probabilitatea acestora, vecini din stanga si din dreapta atunci cand vom
+construi arborele si un camp valoares in care vom memora codul binar corespunzator
+atunci cand il vom afla dupa parcurgerea arborelui. Tot campul valoares va contin
+pentru nodurile non-frunza caracterele ce se afla in subarbore. De exemplu daca avem
+un nod ce are in stanga 'a' si in dreapta 'b', campul valoares va fi "ab". 
+
+- Sir - clasa va construi un sir ce contine caracterele din textul dat de la tastatura,
+fiecare caracter gasindu-se o singura data in acesta. Sirul va fi un sir de NodArbore.
+
+
+- Coada - extinde sir. Avem operatii de adaugare si de scoatere de elemente. Pe langa 
+acesta mai avem opratii de codificare si decodificare a unui text care se fac cu 
+ajutorul semnificatiei fiecarui NodArbore din Coada. Pentru aceasta vom avea nevoie 
+de o copie duplicat a cozii initiale pentru ca pe cea initiala vom face operatii de 
+scoatere si adaugare pana va mai ramane un singur element in ea.
+
+- Arbore - construieste Arborele pe baza cozii de prioritate. Cauta un un cod in arbore
+si obtine codificatiile cu ajutorul unei functii recursive.
+
+
+- Main - clasa ce contine modulul principal. Cum decurge acesta: 
+
+1). In cazul codificarii: 
+ Se citesc de la tastaura toate liniile. Pentru fiecare linie se adauga separatorul 
+manual pentru ca folosim metoda de citire nextLine() din Scanner, iar aceasta nu 
+identifica caracterele '\r' sau '\n'.
+
+ Creeam o coada ce contine simbolurile din text. Fiecare simbol se regaseste o singura
+data in coada. Creeam si o copie a cozii pentru ca prima va suferi transformari 
+(operatii de scoatere) atunci cand vom construi arborele.
+			
+ Coada este deja ordonata crescator atunci cand o creeam (prin constructor).
+
+ Construim arborele.
+
+ Cautam codul corespondent fiecarui simbol/caracter din coada de caractere. Nu e 
+nevoie sa le salvam nicaieri. Acestea vor fi salvate de catre metoda CautareCoduri 
+in campul valoares  din obiectul v_copy (copia cozii initiale). 
+
+ Ordonam Coada descrescator pentru ca simbolurile cu frecventa mai mare sa fie la 
+inceput si pentru a fi gasite mai usor. 
+
+ Afisam Codificarea pentru fiecare simbol. Simbolurile/caracterele sunt reprezentate 
+in cod ASCII. Iar apoi afisam codificarea finala a textului.
+
+2). In cazul decodificarii: 
+
+ Citim codificarile pentru fiecare caracter si le introducem intr-un Sir de NodArbore.
+ Citim si secventa codificata ce va trebui decodificata.
+ Facem decodificarea si la fiecare pas afisam caracterul corespunzator.
+
+
